@@ -1,0 +1,50 @@
+{
+  "name": "hubspot-deal-path-deviation-app",
+  "version": "1.0.0",
+  "description": "Installable HubSpot App that monitors and analyzes your B2B deal pipelines, detects deviations from historical win-patterns, flags stalled or risky deals, and surfaces actionable insights directly on deal records. Enables sales and RevOps teams to identify deals that are off-track early and guide corrective action to improve win rate and velocity.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts tests/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts tests/**/*.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "hubspot",
+    "crm",
+    "deals",
+    "pipeline",
+    "analytics"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@hubspot/api-client": "^13.4.0",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.5",
+    "typescript-eslint": "^8.48.0"
+  }
+}
