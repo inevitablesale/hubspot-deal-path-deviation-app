@@ -1,8 +1,19 @@
 import { Router, Request, Response } from 'express';
+import rateLimit from 'express-rate-limit';
 import crypto from 'crypto';
 import { oauthService } from '../services';
 
 const router = Router();
+
+const oauthRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  message: { error: 'Too many requests', message: 'Please try again later' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+router.use(oauthRateLimiter);
 
 router.get('/install', (_req: Request, res: Response) => {
   const state = crypto.randomBytes(16).toString('hex');
